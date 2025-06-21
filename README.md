@@ -28,7 +28,7 @@ electronRemote.initialize();
 electronRemote.enable(win.webContents)
 ```
 
-## Rust字节编译没有实现，只实现了JavaScript字节码的保存和运行
+## 实现了JavaScript字节码的保存和运行
 
 
 # 命令
