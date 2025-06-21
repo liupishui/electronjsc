@@ -1,4 +1,0 @@
-[15968] 26 Mar 10:21:00.839 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
-[15968] 26 Mar 10:21:00.839 # Redis version=5.0.14.1, bits=64, commit=ec77f72d, modified=0, pid=15968, just started
-[15968] 26 Mar 10:21:00.839 # Configuration loaded
-[15968] 26 Mar 10:21:00.842 # Could not create server TCP listening socket 127.0.0.1:6379: bind: �����ɹ���ɡ�
