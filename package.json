@@ -1,0 +1,95 @@
+{
+  "name": "electron_v8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "output/main.js",
+  "scripts": {
+    "start": "chcp 65001 & electron ./input/main.js",
+    "startjsc": "chcp 65001 & electron ./output/main.js",
+    "compile": "chcp 65001 & electron ./pack/electron-main.js",
+    "compileRun": "npm run compile & electron .",
+    "pack64": "electron-builder --win --x64",
+    "compilePack64": "npm run compile & npm run pack64",
+    "startPro": "chcp 65001 & electron .",
+    "debugPro": "node pack/debug.js",
+    "compilePack64Debug": "npm run compilePack64 && npm run debugPro"
+  },
+  "author": "刘丕水",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.6",
+    "electron-builder": "^24.13.3",
+    "javascript-obfuscator": "^4.1.0",
+    "jsmin2": "^1.2.1",
+    "node-gyp": "^9.3.1",
+    "uglify-js": "^3.17.4"
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2",
+    "better-sqlite3": "9.4.4",
+    "electron-updater": "^6.1.8",
+    "file-uri-to-path": "^2.0.0",
+    "getmac": "^6.6.0",
+    "redis": "^4.6.13"
+  },
+  "build": {
+    "appId": "cn.lpsjj",
+    "npmRebuild": false,
+    "asar": {
+      "smartUnpack": true
+    },
+    "extraResources": [
+      {
+        "from": "./output/extraResources/",
+        "to": "unpacked/output/extraResources/"
+      }
+    ],
+    "files": [
+      "**/*",
+      "!**/*.map",
+      "!input/**",
+      "!pack/**",
+      "!neon_demo/**",
+      "!rust/**",
+      "!jsFiles.txt",
+      "!README.md",
+      "!README.MD",
+      "!README.Md",
+      "!README.mD",
+      "!package-lock.json",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "beforePack": "./pack/before_asar.js",
+    "productName": "electron_v8",
+    "directories": {
+      "output": "./dist"
+    },
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "icon": "./output/app/img/icon.ico",
+      "requestedExecutionLevel": "highestAvailable",
+      "target": "nsis",
+      "compression": "maximum",
+      "publish": {
+        "provider": "generic",
+        "url": "http://www.lpsjj.cn/download/"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://e.coding.net/zhuifengh3o/node/electron_v8.git"
+  }
+}

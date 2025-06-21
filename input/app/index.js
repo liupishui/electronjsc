@@ -1,0 +1,10 @@
+console.log('thisfff',this);
+console.log('window',window);
+console.log('window.require',window.require);
+$(function(){
+    console.log($("body"));
+    $("body").html('render层jsc');
+    DB.setItem('test','你测测');
+    console.log(DB.getItem('test'));
+    alert(333);
+});

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+        window.nodeRequire = require;
+        delete window.require;
+        delete window.exports;
+        delete window.module;
+        </script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <style type="text/css" media="screen">
+        .form{
+            padding:180px 0;
+            width: 400px;
+            margin:0 auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            height:80px;
+        }
+        .input_text1{
+            width: 200px;
+            height: 40px;
+            text-indent: 10px;
+            font-size: 14px;
+        }
+        .btn_normal{
+            border:1px solid #ccc;
+            background: #aaa;
+            color:#333;
+            height:40px;
+            width:60px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .mac{
+            font-size: 20px;
+            padding:10px;
+        }
+    </style>
+    <title>激活</title>
+    </head>
+    <body>
+        <div class="form">
+            <div class="mac">
+
+            </div>
+              <div class="label">请输入激活码</div>
+              <input type="text" name="" value="" placeholder="" class="input_text1">
+                <div class="btn_normal" style="color: #000;margin: 10px auto;">
+                      激活
+                </div>
+        </div>
+    </body>
+    <script src="jsc/db.js"></script>
+    <script src="active.js"></script>
+</html>
